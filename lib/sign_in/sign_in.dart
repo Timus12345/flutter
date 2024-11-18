@@ -1,10 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:projects/theme/theme.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class sign_in extends StatefulWidget {
   const sign_in({super.key});
 
   @override
   State<sign_in> createState() => _sign_inState();
+}
+
+final SupabaseClient supabase = Supabase.instance.client;
+
+final TextEditingController _emailController = TextEditingController();
+final TextEditingController _passController = TextEditingController();
+
+Future<void> sign_user() async{
+  final email = _emailController.text;
+  final password = _passController.text;
+
+  await supabase.auth.signInWithPassword(
+    email: email,
+    password: password,
+  );
+
 }
 
 class _sign_inState extends State<sign_in> {
@@ -15,58 +33,42 @@ class _sign_inState extends State<sign_in> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          Padding(padding: EdgeInsets.only(right:320, top: 40 ),
+          Padding(padding: EdgeInsets.only(right:290, top: 40 ),
               child: IconButton(onPressed: (){}, icon: Image.asset('assets/strelka.png', width: 50, height: 50,))
           ),
-          const Padding(padding: EdgeInsets.only(left: 0, right: 10, top: 20),
+          Padding(padding: EdgeInsets.only(left: 0, right: 10, top: 20),
             child: Text('Привет!',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.w600,
-              ),
+              style: AppShrifts.ralewayBold32.copyWith(color: AppColors.black)
             ),
           ),
-          const Padding(padding: EdgeInsets.only(left: 50, right: 50, top: 10),
+          Padding(padding: EdgeInsets.only(left: 30, right: 30, top: 10),
             child: Text('Заполните Свои Данные Или Продолжите Через Социальные Медиа',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-                fontWeight: FontWeight.w400,
-              ),
+              style: AppShrifts.poppinsRegular16.copyWith(color: AppColors.grey)
             ),
           ),
-          const Padding(padding: EdgeInsets.only(right: 320, top: 40),
+          Padding(padding: EdgeInsets.only(right: 300, top: 40),
             child: Text('Email',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
             ),
           ),
-          const Padding(padding: EdgeInsets.only(left: 20, right: 20, top: 15),
+          Padding(padding: EdgeInsets.only(left: 20, right: 20, top: 15),
             child: TextField(
               decoration: InputDecoration(
-                  fillColor: Color(0xFFF7F7F9),
+                  fillColor: AppColors.lightGrey,
                   filled: true,
                   hintText: ('xyz@gmail.com'),
-                  hintStyle: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black45
-                  ),
-                  border: OutlineInputBorder(
+                  hintStyle: AppShrifts.poppinsMedium14.copyWith(color: AppColors.darkGrey.withOpacity(0.6)),
+                  border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide.none
                   )
               ),
             ),
           ),
-          const Padding(padding: EdgeInsets.only(right: 310, top: 40),
+          Padding(padding: EdgeInsets.only(right: 280, top: 40),
             child: Text('Пароль',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
             ),
           ),
           Padding(
@@ -93,69 +95,58 @@ class _sign_inState extends State<sign_in> {
 
                           ),
                         ),
-                        fillColor: const Color(0xFFF7F7F9),
+                        fillColor: AppColors.lightGrey,
                         filled: true,
                         border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                             borderSide: BorderSide.none
                         ),
                         hintText: ('··········'),
-                        hintStyle: const TextStyle(
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black45,
+                        hintStyle: AppShrifts.poppinsMedium14.copyWith(color: AppColors.darkGrey.withOpacity(0.6))
                         ),
                       ),
                     ),
-                  ),
                 ],
               ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 270, right: 0, top: 1),
+          Padding(padding: EdgeInsets.only(left: 250, right: 0, top: 1),
               child: TextButton(onPressed: (){
                 Navigator.pushReplacementNamed(context, '/forgot');
               },
                   child: Text('Восстановить'))
           ),
           Padding(padding: EdgeInsets.only(left: 20,right: 20,top: 30),
-            child: ElevatedButton(onPressed: () {},
+            child: ElevatedButton(onPressed: () {
+              Navigator.pushReplacementNamed(context, '/holder');
+            },
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: AppColors.blue,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)
 
                   ),
                   minimumSize: const Size(400, 50)
               ),
-              child: const Text('Войти',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white
-                ),
+              child: Text('Войти',
+                style: AppShrifts.ralewaySemiBold14.copyWith(color: AppColors.white)
               ),
             ),
           ),
-          Padding(padding: const EdgeInsets.only(top: 240),
+          Padding(padding: const EdgeInsets.only(top: 160),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Вы впервые? ",
-                    style: TextStyle(
-                        color: Colors.black45,
-                        fontSize: 16
-                    ),
+                  Text("Вы впервые? ",
+                    style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.darkGrey)
                   ),
                   InkWell(
                     onTap: ()
                     {
                       Navigator.pushReplacementNamed(context, '/reg');
                     },
-                    child: const Text("Создать пользователя",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16
-                      ),
+                    child: Text("Создать пользователя",
+                      style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
                     ),
                   )
                 ],

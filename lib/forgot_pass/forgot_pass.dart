@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projects/theme/theme.dart';
 
 class forgot_pass extends StatefulWidget {
   const forgot_pass({super.key});
@@ -16,7 +17,7 @@ class _forgot_passState extends State<forgot_pass> {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(right: 320, top: 40),
+            padding: EdgeInsets.only(right: 290, top: 40),
             child: IconButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/');
@@ -28,38 +29,30 @@ class _forgot_passState extends State<forgot_pass> {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 0, right: 10, top: 20),
+          Padding(
+            padding: const EdgeInsets.only(left: 0, right: 10, top: 20),
             child: Text(
-              'Забыл Пароль!',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.w600,
-              ),
+              'Забыл Пароль',
+              style: AppShrifts.ralewayBold32.copyWith(color: AppColors.black)
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 80, right: 80, top: 10),
             child: Text(
               'Введите Свою Учетную Запись Для Сброса',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-                fontWeight: FontWeight.w400,
+              style: AppShrifts.poppinsRegular16.copyWith(color: AppColors.grey)
               ),
             ),
-          ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 20, right: 20, top: 15),
             child: TextField(
               decoration: InputDecoration(
-                fillColor: Color(0xFFF7F7F9),
+                fillColor: AppColors.lightGrey,
                 filled: true,
                 hintText: ('xyz@gmail.com'),
-                hintStyle: TextStyle(
-                    fontWeight: FontWeight.w400, color: Colors.black45),
-                border: OutlineInputBorder(
+                hintStyle: AppShrifts.poppinsMedium14.copyWith(color: AppColors.darkGrey.withOpacity(0.6)),
+                border: const OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                     borderSide: BorderSide.none),
               ),
@@ -72,16 +65,13 @@ class _forgot_passState extends State<forgot_pass> {
                 showForgotPasswordDialog(context);
               },
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: AppColors.blue,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
                   minimumSize: const Size(400, 50)),
-              child: const Text(
+              child: Text(
                 'Отправить',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white),
+                style: AppShrifts.ralewaySemiBold14.copyWith(color: AppColors.white)
               ),
             ),
           ),
@@ -101,23 +91,18 @@ void showForgotPasswordDialog(BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset('email.png'),
-          const Text(
+
+          Text(
+
             "Проверьте Ваш Email",
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
-            ),
+            style: AppShrifts.ralewayBold16.copyWith(color: AppColors.black)
           ),
           SizedBox(height: 20),
-          const Text(
+          Text(
             "Мы Отправили Код Восстановления Пароля На Вашу Электронную Почту.",
             textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.grey,
-              fontWeight: FontWeight.w200,
-            ),
+            style: AppShrifts.poppinsRegular16.copyWith(color: AppColors.grey)
           ),
         ],
       ),

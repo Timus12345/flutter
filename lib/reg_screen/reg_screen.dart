@@ -1,10 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:projects/theme/theme.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class reg_screen extends StatefulWidget {
   const reg_screen({super.key});
 
   @override
   State<reg_screen> createState() => _reg_screenState();
+}
+
+final SupabaseClient supabase = Supabase.instance.client;
+
+final TextEditingController _nameController = TextEditingController();
+final TextEditingController _emailController = TextEditingController();
+final TextEditingController _passController = TextEditingController();
+
+Future<void> add_user() async{
+  final email = _emailController.text;
+  final name = _nameController.text;
+  final password = _passController.text;
+
+  await supabase.auth.signUp(
+    email: email,
+    password: password,
+    data: {'username': name},
+  );
 }
 
 class _reg_screenState extends State<reg_screen> {
@@ -15,48 +35,36 @@ class _reg_screenState extends State<reg_screen> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          Padding(padding: EdgeInsets.only(right:320, top: 40 ),
+          Padding(padding: EdgeInsets.only(right:290, top: 40 ),
               child: IconButton(onPressed: (){
                 Navigator.pushReplacementNamed(context, '/');
               }, icon: Image.asset('assets/strelka.png', width: 50, height: 50,))
           ),
-          const Padding(padding: EdgeInsets.only(left: 0, right: 5, top: 20),
+          Padding(padding: EdgeInsets.only(left: 0, right: 5, top: 10),
             child: Text('Регистрация',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.w600,
-              ),
+              style: AppShrifts.ralewayBold32.copyWith(color: AppColors.black)
             ),
           ),
-          const Padding(padding: EdgeInsets.only(left: 50, right: 50, top: 10),
+          Padding(padding: EdgeInsets.only(left: 30, right: 30, top: 10),
             child: Text('Заполните Свои Данные Или Продолжите Через Социальные Медиа',
               textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-                fontWeight: FontWeight.w400,
-              ),
+              style: AppShrifts.poppinsRegular16.copyWith(color: AppColors.grey)
             ),
           ),
-          const Padding(padding: EdgeInsets.only(right: 290, top: 40),
+          Padding(padding: EdgeInsets.only(right: 260, top: 40),
             child: Text('Ваше имя',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
             ),
           ),
-          const Padding(padding: EdgeInsets.only(left: 20, right: 20, top: 15),
+          Padding(padding: EdgeInsets.only(left: 20, right: 20, top: 5),
             child: TextField(
+              controller: _nameController,
               decoration: InputDecoration(
-                  fillColor: Color(0xFFF7F7F9),
+                  fillColor: AppColors.lightGrey,
                   filled: true,
                   hintText: ('xxxxxxxx'),
-                  hintStyle: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black45
-                  ),
-                  border: OutlineInputBorder(
+                  hintStyle: AppShrifts.poppinsMedium14.copyWith(color: AppColors.darkGrey.withOpacity(0.6)),
+                  border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide.none
                   )
@@ -64,25 +72,20 @@ class _reg_screenState extends State<reg_screen> {
               //style: (),
             ),
           ),
-          const Padding(padding: EdgeInsets.only(right: 320, top: 20),
+          Padding(padding: EdgeInsets.only(right: 290, top: 20),
             child: Text('Email',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
             ),
           ),
-          const Padding(padding: EdgeInsets.only(left: 20, right: 20, top: 15),
+           Padding(padding: EdgeInsets.only(left: 20, right: 20, top: 5),
             child: TextField(
+              controller: _emailController,
               decoration: InputDecoration(
-                  fillColor: Color(0xFFF7F7F9),
+                  fillColor: AppColors.lightGrey,
                   filled: true,
                   hintText: ('xyz@gmail.com'),
-                  hintStyle: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black45
-                  ),
-                  border: OutlineInputBorder(
+                  hintStyle: AppShrifts.poppinsMedium14.copyWith(color: AppColors.darkGrey.withOpacity(0.6)),
+                  border: const OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
                       borderSide: BorderSide.none
                   )
@@ -90,22 +93,20 @@ class _reg_screenState extends State<reg_screen> {
               //style: (),
             ),
           ),
-          const Padding(padding: EdgeInsets.only(right: 310, top: 20),
+          Padding(padding: EdgeInsets.only(right: 270, top: 20),
             child: Text('Пароль',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
+              style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 5),
             child: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                     child: TextField(
+                      controller: _passController,
                       obscureText: obscureText,
                       obscuringCharacter: ('·'),
                       decoration: InputDecoration(
@@ -123,76 +124,63 @@ class _reg_screenState extends State<reg_screen> {
 
                           ),
                         ),
-                        fillColor: const Color(0xFFF7F7F9),
+                        fillColor: AppColors.lightGrey,
                         filled: true,
                         border: const OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(20)),
                             borderSide: BorderSide.none
                         ),
-                        hintText: ('··········'),
-                        hintStyle: const TextStyle(
-                          fontWeight: FontWeight.w400,
-                          color: Colors.black45,
+                        hintText: ('·········'),
+                        hintStyle: AppShrifts.ralewayMedium16.copyWith(color: AppColors.darkGrey.withOpacity(0.6)),
                         ),
                       ),
                     ),
-                  ),
                 ],
               ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 40, right: 100, top: 1),
-            child: TextButton(onPressed: (){},
-                child: const Text('Даю согласие на обработку персональных данных',
-                  style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w300
-                  ),
-                )
+          Padding(padding: EdgeInsets.only(left: 0, right: 30, top: 15),
+            child: TextButton.icon(onPressed: ()
+            {
+
+            },
+            icon: Image.asset('shield.png'),
+              label: Text('Даю согласие на обработку персональных данных',
+                  style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.darkGrey, decoration: TextDecoration.underline)
+                ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 20,right: 20,top: 30),
+          Padding(padding: EdgeInsets.only(left: 20,right: 20,top: 10),
             child: ElevatedButton(onPressed: (){
-              Navigator.pushReplacementNamed(context, '/forgot');
+              add_user();
+              Navigator.pushReplacementNamed(context, '/');
             },
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: AppColors.blue,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)
                   ),
                   minimumSize: const Size(400, 50)
               ),
-              child: const Text('Зарегистрироватеься',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white
-
-                ),
+              child: Text('Зарегистрироватеься',
+                style: AppShrifts.ralewaySemiBold14.copyWith(color: AppColors.white)
               ),
             ),
           ),
-          Padding(padding: const EdgeInsets.only(top: 150),
+          Padding(padding: const EdgeInsets.only(top: 105),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text("Есть аккаунт? ",
-                    style: TextStyle(
-                        color: Colors.black45,
-                        fontSize: 16
-                    ),
+                  Text("Есть аккаунт? ",
+                    style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.darkGrey)
                   ),
                   InkWell(
                     onTap: ()
                     {
                       Navigator.pushReplacementNamed(context, '/');
                     },
-                    child: const Text("Войти",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16
-                      ),
+                    child: Text("Войти",
+                      style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
                     ),
                   )
                 ],
