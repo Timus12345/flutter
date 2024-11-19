@@ -23,7 +23,7 @@ class holder_screen extends StatelessWidget {
               ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 400, top: 40),
+          Padding(padding: EdgeInsets.only(left: 20, top: 0),
             child: Text('holder',
                 style: AppShrifts.ralewayBold32.copyWith(color: AppColors.black)
             ),

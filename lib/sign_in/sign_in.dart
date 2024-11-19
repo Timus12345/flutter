@@ -22,7 +22,6 @@ Future<void> sign_user() async{
     email: email,
     password: password,
   );
-
 }
 
 class _sign_inState extends State<sign_in> {
@@ -118,7 +117,8 @@ class _sign_inState extends State<sign_in> {
           ),
           Padding(padding: EdgeInsets.only(left: 20,right: 20,top: 30),
             child: ElevatedButton(onPressed: () {
-              Navigator.pushReplacementNamed(context, '/holder');
+              sign_user();
+              Navigator.pushReplacementNamed(context, '/home');
             },
               style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.blue,
