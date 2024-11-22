@@ -58,6 +58,7 @@ class _reg_screenState extends State<reg_screen> {
           ),
           Padding(padding: const EdgeInsets.only(left: 20, right: 20, top: 5),
             child: TextField(
+              cursorColor: AppColors.black,
               controller: _nameController,
               decoration: InputDecoration(
                   fillColor: AppColors.lightGrey,
@@ -79,6 +80,7 @@ class _reg_screenState extends State<reg_screen> {
           ),
            Padding(padding: const EdgeInsets.only(left: 20, right: 20, top: 5),
             child: TextField(
+              cursorColor: AppColors.black,
               controller: _emailController,
               decoration: InputDecoration(
                   fillColor: AppColors.lightGrey,
@@ -106,6 +108,7 @@ class _reg_screenState extends State<reg_screen> {
                 children: [
                   Expanded(
                     child: TextField(
+                      cursorColor: AppColors.black,
                       controller: _passController,
                       obscureText: obscureText,
                       obscuringCharacter: ('·'),

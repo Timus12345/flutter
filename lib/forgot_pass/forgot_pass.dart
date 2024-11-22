@@ -47,6 +47,7 @@ class _forgot_passState extends State<forgot_pass> {
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
             child: TextField(
+              cursorColor: AppColors.black,
               decoration: InputDecoration(
                 fillColor: AppColors.lightGrey,
                 filled: true,

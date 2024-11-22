@@ -51,6 +51,7 @@ class _home_screenState extends State<home_screen> {
               children: [
                 Expanded(
                   child: TextField(
+                    cursorColor: AppColors.black,
                     decoration: InputDecoration(
                         fillColor: AppColors.white,
                         filled: true,
@@ -135,7 +136,9 @@ class _home_screenState extends State<home_screen> {
                   style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, '/favour');
+                  },
                   child: Text(
                     "Все",
                     style: AppShrifts.poppinsMedium12.copyWith(color: AppColors.blue),

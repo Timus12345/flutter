@@ -53,6 +53,7 @@ class _sign_inState extends State<sign_in> {
           ),
           Padding(padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
             child: TextField(
+              cursorColor: AppColors.black,
               decoration: InputDecoration(
                   fillColor: AppColors.lightGrey,
                   filled: true,
@@ -78,6 +79,7 @@ class _sign_inState extends State<sign_in> {
                 children: [
                   Expanded(
                     child: TextField(
+                      cursorColor: AppColors.black,
                       obscureText: obscureText,
                       obscuringCharacter: ('·'),
                       decoration: InputDecoration(

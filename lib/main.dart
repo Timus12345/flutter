@@ -7,6 +7,7 @@ import 'package:projects/reg_screen/reg_screen.dart';
 import 'package:projects/sign_in/sign_in.dart';
 import 'package:projects/verify/verify.dart';
 import 'package:projects/holder/holder.dart';
+import 'package:projects/favourite/favourite.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 
@@ -28,7 +29,8 @@ void main() async
       '/forgot': (context) => const forgot_pass(),
       '/verify': (context) => const verification_screen(),
       '/holder': (context) => const holder_screen(),
-      '/home': (context) => const home_screen()
+      '/home': (context) => const home_screen(),
+      '/favour': (context) => const favourite_screen()
     },
   ));
 }
