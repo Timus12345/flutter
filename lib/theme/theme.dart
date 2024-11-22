@@ -13,8 +13,8 @@ abstract class AppColors
   static const darkGrey = Color(0xFF6A6A6A);
   static const lightBlue = Color(0xFFDFEFFF);
   static const pink = Color(0xFFFFF8F8);
+  static const deepGrey = Color(0xFF7D848D);
   static const white = Color(0xFFFFFFFF);
-
 }
 
 abstract class AppShrifts
@@ -28,7 +28,7 @@ abstract class AppShrifts
 
   static var poppinsRegular16 = GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.normal);
   static var poppinsMedium14 = GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500);
+  static var poppinsMedium12 = GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w500);
   static var poppinsRegular12 = GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.normal);
   static var poppinsRegular18 = GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600);
-
 }

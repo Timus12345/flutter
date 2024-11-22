@@ -28,35 +28,35 @@ Future<void> add_user() async{
 }
 
 class _reg_screenState extends State<reg_screen> {
-  @override
   bool obscureText = true;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          Padding(padding: EdgeInsets.only(right:290, top: 40 ),
+          Padding(padding: const EdgeInsets.only(right:290, top: 40 ),
               child: IconButton(onPressed: (){
                 Navigator.pushReplacementNamed(context, '/');
               }, icon: Image.asset('assets/strelka.png', width: 50, height: 50,))
           ),
-          Padding(padding: EdgeInsets.only(left: 0, right: 5, top: 10),
+          Padding(padding: const EdgeInsets.only(left: 0, right: 5, top: 10),
             child: Text('Регистрация',
               style: AppShrifts.ralewayBold32.copyWith(color: AppColors.black)
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+          Padding(padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
             child: Text('Заполните Свои Данные Или Продолжите Через Социальные Медиа',
               textAlign: TextAlign.center,
               style: AppShrifts.poppinsRegular16.copyWith(color: AppColors.grey)
             ),
           ),
-          Padding(padding: EdgeInsets.only(right: 260, top: 40),
+          Padding(padding: const EdgeInsets.only(right: 260, top: 40),
             child: Text('Ваше имя',
               style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 20, right: 20, top: 5),
+          Padding(padding: const EdgeInsets.only(left: 20, right: 20, top: 5),
             child: TextField(
               controller: _nameController,
               decoration: InputDecoration(
@@ -72,12 +72,12 @@ class _reg_screenState extends State<reg_screen> {
               //style: (),
             ),
           ),
-          Padding(padding: EdgeInsets.only(right: 290, top: 20),
+          Padding(padding: const EdgeInsets.only(right: 290, top: 20),
             child: Text('Email',
               style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
             ),
           ),
-           Padding(padding: EdgeInsets.only(left: 20, right: 20, top: 5),
+           Padding(padding: const EdgeInsets.only(left: 20, right: 20, top: 5),
             child: TextField(
               controller: _emailController,
               decoration: InputDecoration(
@@ -93,7 +93,7 @@ class _reg_screenState extends State<reg_screen> {
               //style: (),
             ),
           ),
-          Padding(padding: EdgeInsets.only(right: 270, top: 20),
+          Padding(padding: const EdgeInsets.only(right: 270, top: 20),
             child: Text('Пароль',
               style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
             ),
@@ -139,7 +139,7 @@ class _reg_screenState extends State<reg_screen> {
               ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 0, right: 30, top: 15),
+          Padding(padding: const EdgeInsets.only(left: 0, right: 30, top: 15),
             child: TextButton.icon(onPressed: ()
             {
 
@@ -150,7 +150,7 @@ class _reg_screenState extends State<reg_screen> {
                 ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 20,right: 20,top: 10),
+          Padding(padding: const EdgeInsets.only(left: 20,right: 20,top: 10),
             child: ElevatedButton(onPressed: (){
               add_user();
               Navigator.pushReplacementNamed(context, '/');

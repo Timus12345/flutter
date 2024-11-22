@@ -9,15 +9,15 @@ class forgot_pass extends StatefulWidget {
 }
 
 class _forgot_passState extends State<forgot_pass> {
-  @override
   bool obscureText = true;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(right: 290, top: 40),
+            padding: const EdgeInsets.only(right: 290, top: 40),
             child: IconButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/');
@@ -37,7 +37,7 @@ class _forgot_passState extends State<forgot_pass> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 80, right: 80, top: 10),
+            padding: const EdgeInsets.only(left: 60, right: 60, top: 10),
             child: Text(
               'Введите Свою Учетную Запись Для Сброса',
               textAlign: TextAlign.center,
@@ -45,7 +45,7 @@ class _forgot_passState extends State<forgot_pass> {
               ),
             ),
           Padding(
-            padding: EdgeInsets.only(left: 20, right: 20, top: 15),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
             child: TextField(
               decoration: InputDecoration(
                 fillColor: AppColors.lightGrey,
@@ -59,7 +59,7 @@ class _forgot_passState extends State<forgot_pass> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 20, right: 20, top: 30),
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 30),
             child: ElevatedButton(
               onPressed: () {
                 showForgotPasswordDialog(context);
@@ -86,23 +86,30 @@ void showForgotPasswordDialog(BuildContext context) {
       context: context,
       builder: (BuildContext context) {
     return AlertDialog(
+      backgroundColor: AppColors.white,
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset('email.png'),
 
-          Text(
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: Text(
 
-            "Проверьте Ваш Email",
-            textAlign: TextAlign.center,
-            style: AppShrifts.ralewayBold16.copyWith(color: AppColors.black)
+              "Проверьте Ваш Email",
+              textAlign: TextAlign.center,
+              style: AppShrifts.ralewayBold16.copyWith(color: AppColors.black)
+            ),
           ),
-          SizedBox(height: 20),
-          Text(
-            "Мы Отправили Код Восстановления Пароля На Вашу Электронную Почту.",
-            textAlign: TextAlign.center,
-            style: AppShrifts.poppinsRegular16.copyWith(color: AppColors.grey)
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.only(left: 0, right: 0),
+            child: Text(
+              "Мы Отправили Код Восстановления Пароля На Вашу Электронную Почту.",
+              textAlign: TextAlign.center,
+              style: AppShrifts.poppinsRegular16.copyWith(color: AppColors.grey)
+            ),
           ),
         ],
       ),
@@ -111,7 +118,7 @@ void showForgotPasswordDialog(BuildContext context) {
       },
   );
 
-  Future.delayed(Duration(seconds: 3), () {
+  Future.delayed(const Duration(seconds: 3), () {
     Navigator.of(context).pushReplacementNamed('/verify');
   });
 }

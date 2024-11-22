@@ -11,7 +11,7 @@ class holder_screen extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.only(right: 290, top: 40),
+            padding: const EdgeInsets.only(right: 290, top: 40),
             child: IconButton(
               onPressed: () {
                 Navigator.pushReplacementNamed(context, '/');

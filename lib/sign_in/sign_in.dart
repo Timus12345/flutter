@@ -29,29 +29,29 @@ class _sign_inState extends State<sign_in> {
   bool obscureText = true;
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.white,
       body: Column(
         children: [
-          Padding(padding: EdgeInsets.only(right:290, top: 40 ),
+          Padding(padding: const EdgeInsets.only(right:290, top: 40 ),
               child: IconButton(onPressed: (){}, icon: Image.asset('assets/strelka.png', width: 50, height: 50,))
           ),
-          Padding(padding: EdgeInsets.only(left: 0, right: 10, top: 20),
+          Padding(padding: const EdgeInsets.only(left: 0, right: 10, top: 20),
             child: Text('Привет!',
               style: AppShrifts.ralewayBold32.copyWith(color: AppColors.black)
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 30, right: 30, top: 10),
+          Padding(padding: const EdgeInsets.only(left: 30, right: 30, top: 10),
             child: Text('Заполните Свои Данные Или Продолжите Через Социальные Медиа',
               textAlign: TextAlign.center,
               style: AppShrifts.poppinsRegular16.copyWith(color: AppColors.grey)
             ),
           ),
-          Padding(padding: EdgeInsets.only(right: 300, top: 40),
+          Padding(padding: const EdgeInsets.only(right: 300, top: 40),
             child: Text('Email',
               style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 20, right: 20, top: 15),
+          Padding(padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
             child: TextField(
               decoration: InputDecoration(
                   fillColor: AppColors.lightGrey,
@@ -65,7 +65,7 @@ class _sign_inState extends State<sign_in> {
               ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(right: 280, top: 40),
+          Padding(padding: const EdgeInsets.only(right: 280, top: 40),
             child: Text('Пароль',
               style: AppShrifts.ralewayMedium16.copyWith(color: AppColors.black)
             ),
@@ -109,13 +109,13 @@ class _sign_inState extends State<sign_in> {
               ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(left: 250, right: 0, top: 1),
+          Padding(padding: const EdgeInsets.only(left: 250, right: 0, top: 1),
               child: TextButton(onPressed: (){
                 Navigator.pushReplacementNamed(context, '/forgot');
               },
-                  child: Text('Восстановить'))
+                  child: Text('Восстановить', style: AppShrifts.poppinsRegular12.copyWith(color: AppColors.grey),))
           ),
-          Padding(padding: EdgeInsets.only(left: 20,right: 20,top: 30),
+          Padding(padding: const EdgeInsets.only(left: 20,right: 20,top: 30),
             child: ElevatedButton(onPressed: () {
               sign_user();
               Navigator.pushReplacementNamed(context, '/home');
