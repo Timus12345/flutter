@@ -170,7 +170,7 @@ class _home_screenState extends State<home_screen> {
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                       padding: EdgeInsets.zero,
                     ),
-                    icon: Image.asset('assets/nike.png'),
+                    icon: Image.asset('nike_cart.png'),
                   ),
               ],
             ),

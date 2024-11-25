@@ -8,6 +8,8 @@ import 'package:projects/sign_in/sign_in.dart';
 import 'package:projects/verify/verify.dart';
 import 'package:projects/holder/holder.dart';
 import 'package:projects/favourite/favourite.dart';
+import 'package:projects/cart_screen/cart_screen.dart';
+
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 
@@ -30,7 +32,8 @@ void main() async
       '/verify': (context) => const verification_screen(),
       '/holder': (context) => const holder_screen(),
       '/home': (context) => const home_screen(),
-      '/favour': (context) => const favourite_screen()
+      '/favour': (context) => const favourite_screen(),
+      '/cart': (context) => const cart_screen()
     },
   ));
 }

@@ -7,7 +7,7 @@ class CustomBottomNavBar extends StatefulWidget {
   _CustomBottomNavBarState createState() => _CustomBottomNavBarState();
 }
 
-class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
+class _CustomBottomNavBarState extends State {
   int _selectedIndex = 0;
 
   @override
@@ -40,15 +40,13 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           items: [
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
+            BottomNavigationBarItem(
+              icon: Image.asset('assets/home-2.png', width: 30, height: 30),
               label: 'Home',
             ),
-            const BottomNavigationBarItem(
-
-              icon: Icon(Icons.favorite_border),
+            BottomNavigationBarItem(
+              icon: Image.asset('assets/heart.png', width: 30, height: 30),
               label: 'Favorites',
-
             ),
             BottomNavigationBarItem(
               icon: Stack(
@@ -61,18 +59,18 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                           : Colors.transparent,
                       shape: BoxShape.circle,
                     ),
-                    child: const Icon(Icons.shopping_bag_outlined),
+                    child: Image.asset('bag-2.png', width: 30, height: 30),
                   ),
                 ],
               ),
               label: 'Cart',
             ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_outlined),
+            BottomNavigationBarItem(
+              icon: Image.asset('assets/notify.png', width: 30, height: 30),
               label: 'Notifications',
             ),
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline),
+            BottomNavigationBarItem(
+              icon: Image.asset('profile.png', width: 30, height: 30),
               label: 'Profile',
             ),
           ],

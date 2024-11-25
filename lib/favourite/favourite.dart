@@ -20,8 +20,11 @@ class _favourite_screenState extends State<favourite_screen> {
         title: Row(
           children: [
             Padding(padding: const EdgeInsets.only(right: 60),
-                child:
-                IconButton(onPressed: (){}, icon: Image.asset('assets/strelka2.png', width: 50, height: 50,))
+                child: IconButton(
+                    onPressed: (){
+                      Navigator.pushReplacementNamed(context, 'cart');
+                    },
+                    icon: Image.asset('assets/strelka2.png', width: 50, height: 50,))
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10, top: 10),
@@ -65,7 +68,7 @@ class _favourite_screenState extends State<favourite_screen> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                     padding: EdgeInsets.zero,
                   ),
-                  icon: Image.asset('assets/nike.png'),
+                  icon: Image.asset('nike_cart.png'),
                 ),
               ],
             ),
@@ -83,7 +86,7 @@ class _favourite_screenState extends State<favourite_screen> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                     padding: EdgeInsets.zero,
                   ),
-                  icon: Image.asset('assets/nike.png'),
+                  icon: Image.asset('nike_cart.png'),
                 ),
                 IconButton(
                   onPressed: () {
@@ -93,7 +96,7 @@ class _favourite_screenState extends State<favourite_screen> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                     padding: EdgeInsets.zero,
                   ),
-                  icon: Image.asset('assets/nike.png'),
+                  icon: Image.asset('nike_cart.png'),
                 ),
               ],
             ),
@@ -111,7 +114,7 @@ class _favourite_screenState extends State<favourite_screen> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                     padding: EdgeInsets.zero,
                   ),
-                  icon: Image.asset('assets/nike.png'),
+                  icon: Image.asset('nike_cart.png'),
                 ),
                 IconButton(
                   onPressed: () {
@@ -121,7 +124,7 @@ class _favourite_screenState extends State<favourite_screen> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
                     padding: EdgeInsets.zero,
                   ),
-                  icon: Image.asset('assets/nike.png'),
+                  icon: Image.asset('nike_cart.png'),
                 ),
               ],
             ),
