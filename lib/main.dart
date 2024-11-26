@@ -9,6 +9,7 @@ import 'package:projects/verify/verify.dart';
 import 'package:projects/holder/holder.dart';
 import 'package:projects/favourite/favourite.dart';
 import 'package:projects/cart_screen/cart_screen.dart';
+import 'package:projects/popular/popular.dart';
 
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -33,7 +34,8 @@ void main() async
       '/holder': (context) => const holder_screen(),
       '/home': (context) => const home_screen(),
       '/favour': (context) => const favourite_screen(),
-      '/cart': (context) => const cart_screen()
+      '/cart': (context) => const cart_screen(),
+      '/popular': (context) => const popular_screen()
     },
   ));
 }

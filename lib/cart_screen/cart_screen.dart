@@ -13,7 +13,6 @@ class _cart_screenState extends State<cart_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const CustomBottomNavBar(),
       backgroundColor: AppColors.lightGrey,
       appBar: AppBar(
         backgroundColor: AppColors.lightGrey,
@@ -21,17 +20,28 @@ class _cart_screenState extends State<cart_screen> {
           children: [
             Padding(padding: const EdgeInsets.only(right: 60),
                 child:
-                IconButton(onPressed: (){}, icon: Image.asset('assets/strelka2.png', width: 50, height: 50,))
+                IconButton(onPressed: (){
+                  Navigator.pushReplacementNamed(context, '/home');
+                }, icon: Image.asset('assets/strelka2.png', width: 50, height: 50,))
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10, top: 10),
               child: Text(
                 'Корзина',
-                style: AppShrifts.ralewayBold16.copyWith(color: AppColors.black),
+                style: AppShrifts.ralewaySemiBold16.copyWith(color: AppColors.black),
               ),
             ),
           ],
         ),
+      ),
+      body: Column(
+        children: [
+          Padding(padding: const EdgeInsets.only(left: 20, top: 5, bottom: 15),
+            child: Text('3 товара',
+                style: AppShrifts.poppinsMedium16.copyWith(color: AppColors.black)
+            ),
+          ),
+        ],
       ),
     );
   }

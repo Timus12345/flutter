@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:projects/navigation_menu/BottomNavBar.dart';
 import 'package:projects/theme/theme.dart';
 
-class favourite_screen extends StatefulWidget {
-  const favourite_screen({super.key});
+class popular_screen extends StatefulWidget {
+  const popular_screen({super.key});
 
   @override
-  State<favourite_screen> createState() => _favourite_screenState();
+  State<popular_screen> createState() => _popular_screenState();
 }
 
-class _favourite_screenState extends State<favourite_screen> {
+class _popular_screenState extends State<popular_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: appBar(context),
       backgroundColor: AppColors.lightGrey,
       appBar: AppBar(
         backgroundColor: AppColors.lightGrey,
@@ -22,7 +20,7 @@ class _favourite_screenState extends State<favourite_screen> {
             Padding(padding: const EdgeInsets.only(right: 60),
                 child: IconButton(
                     onPressed: (){
-                      Navigator.pushReplacementNamed(context, '/home');
+                      Navigator.pushReplacementNamed(context, '/cart');
                     },
                     icon: Image.asset('assets/strelka2.png', width: 50, height: 50,))
             ),

@@ -13,7 +13,7 @@ class _home_screenState extends State<home_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const CustomBottomNavBar(),
+      bottomNavigationBar: appBar(context),
       backgroundColor: AppColors.lightGrey,
       appBar: AppBar(
         backgroundColor: AppColors.lightGrey,
@@ -137,7 +137,7 @@ class _home_screenState extends State<home_screen> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.pushReplacementNamed(context, '/favour');
+                    Navigator.pushReplacementNamed(context, '/popular');
                   },
                   child: Text(
                     "Все",

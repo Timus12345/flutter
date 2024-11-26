@@ -25,9 +25,11 @@ abstract class AppShrifts
   static var ralewaySemiBold21 = GoogleFonts.raleway(fontSize: 21, fontWeight: FontWeight.w600);
   static var ralewayMedium16 = GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.w500);
   static var ralewayRegular12 = GoogleFonts.raleway(fontSize: 12, fontWeight: FontWeight.normal);
+  static var ralewaySemiBold16 = GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.w600);
 
   static var poppinsRegular16 = GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.normal);
   static var poppinsMedium14 = GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500);
+  static var poppinsMedium16 = GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500);
   static var poppinsMedium12 = GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w500);
   static var poppinsRegular12 = GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.normal);
   static var poppinsRegular18 = GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600);
