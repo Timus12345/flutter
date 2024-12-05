@@ -34,10 +34,10 @@ class _home_screenState extends State<home_screen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 60, top: 10),
+              padding: const EdgeInsets.only(left: 36, top: 10),
               child: IconButton(
                 onPressed: () {},
-                icon: Image.asset('assets/bag.png'),
+                icon: Image.asset('bag_white.png', width: 50, height: 50),
               ),
             ),
           ],
@@ -100,7 +100,9 @@ class _home_screenState extends State<home_screen> {
                   child: Text('Все', style: AppShrifts.poppinsRegular12.copyWith(color: AppColors.black),),
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/outdoor');
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: AppColors.white,
                       shape: RoundedRectangleBorder(

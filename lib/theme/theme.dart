@@ -19,18 +19,33 @@ abstract class AppColors
 
 abstract class AppShrifts
 {
+  //RALEWAY SHRIFTS
   static var ralewayBold32 = GoogleFonts.raleway(fontSize: 32, fontWeight: FontWeight.bold);
+  static var ralewayBold26 = GoogleFonts.raleway(fontSize: 26, fontWeight: FontWeight.bold);
+  static var ralewayBold20 = GoogleFonts.raleway(fontSize: 20, fontWeight: FontWeight.bold);
   static var ralewayBold16 = GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.bold);
+  static var ralewayBold15 = GoogleFonts.raleway(fontSize: 15, fontWeight: FontWeight.bold);
+  static var ralewaySemiBold12 = GoogleFonts.raleway(fontSize: 12, fontWeight: FontWeight.w600);
   static var ralewaySemiBold14 = GoogleFonts.raleway(fontSize: 14, fontWeight: FontWeight.w600);
-  static var ralewaySemiBold21 = GoogleFonts.raleway(fontSize: 21, fontWeight: FontWeight.w600);
-  static var ralewayMedium16 = GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.w500);
-  static var ralewayRegular12 = GoogleFonts.raleway(fontSize: 12, fontWeight: FontWeight.normal);
   static var ralewaySemiBold16 = GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.w600);
+  static var ralewaySemiBold20 = GoogleFonts.raleway(fontSize: 20, fontWeight: FontWeight.w600);
+  static var ralewaySemiBold21 = GoogleFonts.raleway(fontSize: 21, fontWeight: FontWeight.w600);
+  static var ralewayMedium20 = GoogleFonts.raleway(fontSize: 20, fontWeight: FontWeight.w500);
+  static var ralewayMedium16 = GoogleFonts.raleway(fontSize: 16, fontWeight: FontWeight.w500);
+  static var ralewayMedium14 = GoogleFonts.raleway(fontSize: 14, fontWeight: FontWeight.w500);
+  static var ralewayRegular12 = GoogleFonts.raleway(fontSize: 12, fontWeight: FontWeight.normal);
 
-  static var poppinsRegular16 = GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.normal);
+  //POPPINS SHRIFTS
   static var poppinsMedium14 = GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w500);
   static var poppinsMedium16 = GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500);
   static var poppinsMedium12 = GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w500);
   static var poppinsRegular12 = GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.normal);
-  static var poppinsRegular18 = GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600);
+  static var poppinsRegular16 = GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.normal);
+  static var poppinsRegular14 = GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.normal);
+  static var poppinsRegular18 = GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.normal);
+  static var poppinsSemiBold24 = GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.w600);
+
+  //WORK SANS SHRIFTS
+  static var worksansMedium14 = GoogleFonts.workSans(fontSize: 14, fontWeight: FontWeight.w500);
+
 }
