@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:projects/forgot_pass/forgot_pass.dart';
@@ -11,7 +10,6 @@ import 'package:projects/favourite/favourite.dart';
 import 'package:projects/cart_screen/cart_screen.dart';
 import 'package:projects/popular/popular.dart';
 import 'package:projects/outdoor/outdoor.dart';
-
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 
